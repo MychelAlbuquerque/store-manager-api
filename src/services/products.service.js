@@ -8,16 +8,27 @@ const getAll = async () => {
 };
 
 const getById = async (id) => {
-  const error = validations.idValidation(id);
+  const error = await validations.idValidation(id);
   if (error.type) return error;
-  
+
   const product = await productsModel.getById(id);
   if (!product) return { type: 'error', message: 'Product not found' };
 
   return { type: null, message: product };
 };
 
+const insertProduct = async (name) => {
+  const error = await validations.insertProductValidation(name);
+  if (error.type) return error;
+
+  const newProductId = await productsModel.insertProduct(name);
+  const newProduct = await productsModel.getById(newProductId);
+
+  return { type: null, message: newProduct };
+};
+
 module.exports = {
   getAll,
   getById,
+  insertProduct,
 };
