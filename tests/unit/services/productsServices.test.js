@@ -3,17 +3,18 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 
 const productsServices = require('../../../src/services/products.service');
+const productsModel = require('../../../src/models/products.model');
 
 const { products } = require('../mocks/products.mock');
 
 
 describe('Testa funções de busca de produtos, camada Service.', function () {
-  if ('Verificar se todos os produtos do banco de dados são retornados', async function () {
-    sinon.stub(productsServices, 'getAll').resolves(products);
+  it ('Verifica se todos os produtos do banco de dados são retornados', async function () {
+    sinon.stub(productsModel, 'getAll').resolves(products);
     const allProducts = await productsServices.getAll();
 
-    expect(products.type).to.be.equal(null);
-    expect(products.message).to.be.deep.equal(allProducts);
+    expect(allProducts.type).to.be.deep.equal(null);
+    expect(allProducts.message).to.be.deep.equal(products);
   });
     afterEach(function () {
       sinon.restore();
