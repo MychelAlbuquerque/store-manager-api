@@ -62,6 +62,7 @@ npm start
 
 Caso tenha qualquer sugestão ou algum comentário, vou ficar muito feliz em saber!
 
-Mychel Albuquerque
+Desenvolvido por Mychel Albuquerque.
 
-mychelalbu@gmail.com
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mychel-albuquerque/) 
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](https://criarmeulink.com.br/u/1676914754)
